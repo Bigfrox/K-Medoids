@@ -195,6 +195,7 @@ def main():
 
         #? Step3. 클러스터 내의 다른 노드를 대상으로, 다른 클러스터의 centroid와의 거리가 더 가까우면 Reassign한다.
         isChanged = SetNewCluster(cluster,centroid_list,gene_id)
+    end_time = datetime.now()
     print("\n")
     for num in range(k):
         cluster[num].sort()
@@ -202,8 +203,8 @@ def main():
         print("\n")
         
     output_to_file(output_filename,cluster)
-    
-    print("Time Elapsed : ", datetime.now() - start_time)
+    print("\n")
+    print("Time Elapsed : ", end_time - start_time,"microseconds")
 
 
 
